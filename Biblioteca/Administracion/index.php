@@ -94,7 +94,7 @@
 
 <script>
 
-    if(window.location.href.substring(window.location.href.lastIndexOf("/")) == "/index.html?=success"){
+    if(window.location.href.substring(window.location.href.lastIndexOf("/")) == "/index.php?=success"){
         mostraralert()
 
     }
