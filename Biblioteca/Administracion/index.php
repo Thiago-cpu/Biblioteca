@@ -19,7 +19,7 @@
 
     <script>
         $(function(){
-         $("#alert").load("/biblioteca/src/alert.html", function(){
+         $("#alert").load("/Biblioteca/src/alert.html", function(){
             $('.msg').html('¡El libro se subió correctamente!')
          });
 

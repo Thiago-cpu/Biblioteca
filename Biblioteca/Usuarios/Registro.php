@@ -20,7 +20,7 @@ if ($_POST['pass'] != $_POST['rpass']){
 
 			if ($mysqli->query($sql) === TRUE) {
 		
-				header("location: login.html");
+				header("location: Login.html");
 			} 
 		}
 		$resultado->close();
