@@ -1,0 +1,236 @@
+
+body {
+margin: 0px;
+height: 100%;
+width: 100%;
+background-color: #E1FFFC;
+}
+
+p{
+margin-left: 0px;
+font-size: 18px;
+}
+
+a{
+color: white;	
+text-decoration: none;
+}
+
+    /*Decorado de los links*/
+.link{
+color: blue;
+text-decoration: underline;
+}
+
+/*Tipografia y ubicacion de los titulos*/
+h1{
+text-align: center; 
+text-decoration: underline; 
+font-family: Cooper;
+}
+
+/*Margen y tipografia de los subtitulos*/
+h2,h3,h4,h5,h6{ 
+font-size: 25px;	
+margin: 0px;
+font-family: Cooper;
+}
+
+/*Diseño general de la barra*/
+header{
+font-size: 18px;
+background-color: #144E47;
+display: flex;
+justify-content: space-evenly;
+}
+
+/*Diseño del texto de la barra*/
+.header-texto{
+    margin: 0;
+    padding: 10px;
+    transition: .35s;
+    text-decoration-color: white;
+}
+
+/*Efecto del cursor en la barra*/
+.header-texto:hover{
+background-color: #639D97;
+cursor: pointer;
+text-decoration-color: rgb(0,0,0);
+}
+
+/*  img{
+width: auto;
+height: 80%;	
+} */
+
+    /*Diseño de botones*/
+.boton{
+color: white;
+border: 0;
+background-color: #144E47;
+border-radius: 5px;
+width: auto;
+height: 30px;
+cursor: pointer;
+margin-right: 8px;
+margin-left: 8px;
+}
+
+    /*Diseño de botones boton1*/
+.boton1{
+color: white;	
+border: 0;
+top: 13%;
+right: 5%;
+background-color: #CF3446;
+border-radius: 5px;
+width: auto;
+height: 30px;
+cursor: pointer;
+position: absolute;
+}
+
+/*Cuando el mouse está por encima del botón*/
+.boton:hover{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.boton1:hover{
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+/*Diseño general de los formularios*/
+form {
+font-size: 22px;
+width: fit-content;
+height: auto;
+padding: 20px;		
+}
+
+/*Diseño de los formularios cuenta*/
+.cuenta{ 
+width: fit-content;
+height: auto; 
+background-color: white; 
+font-size: 20px;
+border: 5px solid #144E47; 
+border-radius: 10px;
+}	
+
+
+
+/*Formato del cuadro de texto*/
+textarea{
+border: 1px solid #144E47;
+border-radius: 5px;
+height: 80%;
+width: 98%;
+margin: 10px;
+}
+
+/*Formato del imput*/
+input{
+border: 1px solid #144E47;
+border-radius: 5px;
+}
+
+
+/*Diseño general de los span*/
+span{
+font-size: 22px;
+position:absolute;
+border-radius: 5px;	
+background-color: #EDFEF1;
+border: 2px solid #144E47; 
+padding: 20px;		
+}
+
+/*Diseño de los span img*/
+.imgl{
+left: 1%;
+width: 25%;
+height: 74%;
+}
+
+/*Diseño de los span titulo*/
+.titulo {
+left: 27%;
+width: 72%;
+height: 13%;
+}
+
+/*Diseño de los span datos*/
+.datos{
+left: 27%;
+top: 25%;
+width: 40%;
+height: 60%;
+}
+
+/*Diseño de los span aut*/
+.aut{
+left: 68%;
+top: 25%;
+width: 31%;
+height: 60%;
+}
+
+/*Diseño de los span desc*/
+.desc{
+left: 1%;
+bottom: 1%;
+top: 86%;
+width: 98%;
+height: 26%;
+}
+
+/*Imagen de portada de libro*/
+.img_align{
+height:100%;
+width: 100%;
+margin-top: 1%;
+display:flex;
+justify-content: center;
+}
+
+/*Imagen del autor*/
+.img_align_autor{
+height: 100%;
+display: flex;
+justify-content: center;
+margin-top: 1%;
+}
+
+
+
+/*Contenedores del libro e imagen*/
+#contenedor_cartas{
+margin: 1%;
+display:flex;
+flex-direction:row;
+flex-wrap: wrap;
+justify-content: space-between;
+background-color: #E1FFFC
+}
+
+.card.mb-3{
+border: 2px solid #144E47;
+border-radius: 10px;
+background-color: #EDFEF1;
+}
+
+/*Datos dentro del contenedor*/
+.card-body{
+flex: 1 1 auto;
+min-height: 1px;
+padding: 1.25rem;
+}
+
+/*Imagen dentro del contenedor*/
+.card-img{
+border: 0.5px solid #144E47;
+border-radius: 5px;
+}
+

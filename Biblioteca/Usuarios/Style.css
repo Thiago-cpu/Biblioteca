@@ -1,0 +1,148 @@
+
+body {
+margin:0%;
+background-color: #A5FCF2}
+
+p {
+margin-left: 0px;
+font-size: 22px; }
+
+ul{
+font-size: 22px;}
+
+/*Tipografia y ubicacion de los titulos*/
+h1{
+text-align: center; 
+text-decoration: underline; 
+font-family: Cooper;}
+
+/*Margen y tipografia de los subtitulos*/
+h2,h3,h4,h5,h6{
+margin-left: 0px;  
+margin-right: 60px;
+margin-bottom: 0px;
+margin-top: 0px; 
+font-family: Cooper;}
+
+
+	/*Diseño de botones*/
+.boton{
+margin-right: 8px;
+margin-left: 8px;
+border: 0;
+background-color: #34CFBD;
+border-radius: 2px;
+width: auto;
+height: 30px;}
+
+	/*Decorado de los links*/
+.link{
+text-decoration-color: blue;
+text-decoration: underline;}
+
+/*Diseño general de la barra*/
+header{
+background-color: #34CFBD;
+height:30px;
+display: flex;
+justify-content: space-evenly;}
+
+/*Diseño del texto de la barra*/
+.header-texto{
+margin: 0;
+padding: 15px;
+transition: .35s;
+text-decoration: none;}
+
+/*Efecto del cursor en la barra*/
+.header-texto:hover{
+background-color: #62FF8F;
+cursor: pointer;}
+
+
+
+/*Diseño de los formularios cuenta*/
+.cuenta{ 
+width: fit-content;
+height: auto; 
+background-color: white; 
+font-size: 20px;
+border: 10px solid #34CFBD; 
+padding: 20px; 
+border-radius: 10px;}
+
+/*Diseño general de los span*/
+span{
+margin: 1%;
+float: left;
+border: 4px solid #34CFBD; 
+padding: 20px;	
+border-radius: 5px;}
+
+/*Diseño de los span img*/
+.imgl{
+width: fit-content;
+height: 375px;
+margin-left: 50px;
+margin-right: 20px;
+margin-top: 35px;}
+
+/*Diseño de los span titulo*/
+.titulo{
+width: 700px;
+height: 20px;
+margin-left: 2px;
+margin-right: 50px;
+margin-top: 35px;}
+
+/*Diseño de los span datos*/
+.datos{
+width: 350px;	
+height: 250px;
+margin-top: 25px;
+margin-left: 2px;
+margin-right: 20px;}
+
+/*Diseño de los span aut*/
+.aut{
+width: 300px;
+height: 250px;
+margin-top: 25px;
+margin-right: 50px;}
+
+/*Diseño de los span desc*/
+.desc{
+width: 1100px;
+height: fit-content;
+margin-top: 25px;
+margin-left: 50px;
+margin-right: 20px;
+margin-bottom: 35px;}
+
+
+/*Diseño del span bloque*/
+.bloque{
+left: 51%;
+top: 25%;
+width: 51%;
+height: fit-content;
+background-color: #EDFEF1}
+
+/*Diseño del span bloque1*/
+.bloque1{
+left: 1%;
+bottom: 1%;
+top: 25%;
+width: 45%;
+height: fit-content; 
+background-color: #EDFEF1}
+
+.div-g{
+	margin: 2%;
+	padding: 2%
+
+}
+
+
+	
+
