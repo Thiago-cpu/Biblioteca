@@ -116,7 +116,7 @@ if ($ejecutarconsulta = mysqli_query($mysqli, $cargarcomentarios)){
             <img src='../Administracion/$comentarios[1]' width='50px' height='50px'>
             </span>
         </div> 
-        <textarea name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
+        <textarea style='resize: none;' name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
 $comentarios[0]:
 $comentarios[2]
         </textarea>
