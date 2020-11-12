@@ -146,42 +146,42 @@ html, body {
 }
 
     /*Diseño de los span img*/
-	.imgl{
-	left: 1%;
-	width: 22%;
-    height: 60%;
+    .imgl{
+    left: 1%;
+    width: 25%;
+    height: 74%;
 }
     
     /*Diseño de los span titulo*/
     .titulo {
     left: 27%;
-    width: 69%;
-    height: 8%;
+    width: 72%;
+    height: 13%;
 }
 
     /*Diseño de los span datos*/
-	.datos{
-	left: 27%;
-    top: 24%;
-    width: 35%;
-    height: 46%;
+    .datos{
+    left: 27%;
+    top: 26%;
+    width: 40%;
+    height: 60%;
 }
 
     /*Diseño de los span aut*/
-	.aut{
-	left: 66%;
-    top: 24%;
-    width: 30%;
-    height: 46%;
+    .aut{
+    left: 68%;
+    top: 26%;
+    width: 31%;
+    height: 60%;
 }
 
     /*Diseño de los span desc*/
-	.desc{
-	left: 1%;
-	bottom: 1%;
-    top: 78%;
-    width: 95%;
-    height: 25%;
+    .desc{
+    left: 1%;
+    bottom: 1%;
+    top: 88%;
+    width: 98%;
+    height: 26%;
 }
 
     /*Imagen de portada de libro*/

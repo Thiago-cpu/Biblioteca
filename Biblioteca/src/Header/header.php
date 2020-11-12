@@ -1,5 +1,3 @@
-
-
 <?php
 session_start();
 echo " <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
@@ -10,7 +8,7 @@ echo " <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 ";
 if (isset($_SESSION['id'])){
     echo "
-    <a class='navbar-brand' href='/Biblioteca/src/inicio.php'>Menú</a>
+    <a class='navbar-brand' href='/Biblioteca/src/inicio.php'>Inicio</a>
     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
         <span class='navbar-toggler-icon'></span>
     </button>
@@ -50,17 +48,17 @@ if (isset($_SESSION['id'])){
 }
 else{
     echo "
-    <a class='navbar-brand' href='/Biblioteca/src/inicio.php'>Menú</a>
+    <a class='navbar-brand' href='/Biblioteca/src/inicio.php'>Inicio</a>
     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavDropdown' aria-controls='navbarNavDropdown' aria-expanded='false' aria-label='Toggle navigation'>
         <span class='navbar-toggler-icon'></span>
     </button>
     <div class='collapse navbar-collapse' id='navbarNavDropdown'>
         <ul class='navbar-nav'>
         <li class='nav-item active'>
-            <a class='nav-link' href='/Biblioteca/Buscador/index.php'>Libros</a>
+            <a class='nav-link' href='/Biblioteca/Buscador/index.php'>Catálogo</a>
         </li>
         <form class='form-inline'>
-            <a class='btn btn-outline-success' href='/Biblioteca/Usuarios/Login.html'>Ingresarse</a>
+            <a class='btn btn-outline-success' href='/Biblioteca/Usuarios/Login.html'>Ingresar</a>
             <a class='btn btn-outline-success' href='/Biblioteca/Usuarios/SignUp.html'>Registrarse</a>
         </form>
     </ul>

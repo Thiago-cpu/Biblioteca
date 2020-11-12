@@ -36,7 +36,7 @@ echo "
 <span class='imgl'>
     <h2> Foto portada </h2>
     <div class='img_align'>
-    <img src='../Administracion/$fila[10]' width='200' height='300'>
+    <img src='../Administracion/$fila[10]' width='300' height='400'>
     </div>
     </span>
 
@@ -61,7 +61,7 @@ echo "
 
     <h2> Autor: $fila[8]</h2>
     <div class='img_align_autor'>    
-    <img src='../Administracion/$fila[11]' width='200' height='300' >
+    <img src='../Administracion/$fila[11]' width='270' height='300' >
     </div>
     </span>
 
@@ -116,7 +116,7 @@ if ($ejecutarconsulta = mysqli_query($mysqli, $cargarcomentarios)){
             <img src='../Administracion/$comentarios[1]' width='50px' height='50px'>
             </span>
         </div> 
-        <textarea style='resize: none;' name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
+        <textarea name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
 $comentarios[0]:
 $comentarios[2]
         </textarea>
