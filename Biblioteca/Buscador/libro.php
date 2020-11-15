@@ -36,13 +36,15 @@ echo "
 <span class='imgl'>
     <h2> Foto portada </h2>
     <div class='img_align'>
-    <img src='../Administracion/$fila[10]' width='300' height='400'>
+    <img src='../Administracion/$fila[10]' width='90%' height='92%'>
     </div>
     </span>
+<div style='text-align: center;'>
+    <span class='titulo'>
+        <h2>$fila[0]</h2>
+    </span>
+</div>
 
-<span class='titulo'>	
-	<h2>$fila[0]</h2>
-</span>
 
 <span class='datos'>
 	<h2> Datos del libro: </h2>
@@ -61,7 +63,7 @@ echo "
 
     <h2> Autor: $fila[8]</h2>
     <div class='img_align_autor'>    
-    <img src='../Administracion/$fila[11]' width='270' height='300' >
+    <img src='../Administracion/$fila[11]' width='70%' height='90%' >
     </div>
     </span>
 
@@ -86,7 +88,7 @@ if(isset($_SESSION["apodo"])){
 
     
         echo "
-        <form class='inp-com' style = 'position: relative;top: 102%;' action='../src/Comentarios/cargarcomentario.php?id=$id' method='POST'>
+        <form class='inp-com' style = 'position: relative;top: 82%;' action='../src/Comentarios/cargarcomentario.php?id=$id' method='POST'>
         <div class='input-group'>
         <div class='input-group-prepend'>
             <span class='input-group-text'>
@@ -110,13 +112,13 @@ if ($ejecutarconsulta = mysqli_query($mysqli, $cargarcomentarios)){
     while ($comentarios = mysqli_fetch_row($ejecutarconsulta)) {
         
         echo "
-        <div style='position:relative; top:102%' class='input-group'>
+        <div style='position:relative; top:82%' class='input-group'>
         <div class='input-group-prepend'>
             <span class='input-group-text'>
             <img src='../Administracion/$comentarios[1]' width='50px' height='50px'>
             </span>
         </div> 
-        <textarea style='resize: none;' name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
+        <textarea name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
 $comentarios[0]:
 $comentarios[2]
         </textarea>

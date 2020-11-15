@@ -15,7 +15,7 @@ if (isset($_SESSION['id'])){
     <div class='collapse navbar-collapse' id='navbarNavDropdown'>
         <ul class='navbar-nav'>
         <li class='nav-item active'>
-            <a class='nav-link' href='/Biblioteca/Buscador/index.php'>Libros</a>
+            <a class='nav-link' href='/Biblioteca/Buscador/index.php'>Catálogo</a>
         </li>";
         if ($_SESSION['admin'] == 1){
             echo "
@@ -43,6 +43,12 @@ if (isset($_SESSION['id'])){
             </div>
         </li>
         </ul>
+        <ul class='navbar-nav'  style='position:absolute; right: 10px'>
+        <li class='nav-item active'>
+        <a class='nav-link btn btn-success' href='https://thiago-cpu.github.io/Toagames/index.html'>Mejores juegos del mundo</a>
+        </li>
+        </ul>
+
     </div>
     ";
 }
@@ -57,10 +63,21 @@ else{
         <li class='nav-item active'>
             <a class='nav-link' href='/Biblioteca/Buscador/index.php'>Catálogo</a>
         </li>
-        <form class='form-inline'>
-            <a class='btn btn-outline-success' href='/Biblioteca/Usuarios/Login.html'>Ingresar</a>
-            <a class='btn btn-outline-success' href='/Biblioteca/Usuarios/SignUp.html'>Registrarse</a>
-        </form>
+        <li class='nav-item active'>
+        <a class='btn btn-success' href='/Biblioteca/Usuarios/Login.html'>Ingresar</a>
+        </li>
+        <li class='nav-item active'>
+        <a class='btn btn-success' href='/Biblioteca/Usuarios/SignUp.html'>Registrarse</a>
+        </li>
+
+            
+
+    </ul>
+    <ul class='navbar-nav'  style='position:absolute; right: 10px'>
+
+    <li class='nav-item active'>
+    <a class='nav-link btn btn-success' href='https://thiago-cpu.github.io/Toagames/index.html'>Mejores juegos del mundo</a>
+    </li>
     </ul>
     ";
 }

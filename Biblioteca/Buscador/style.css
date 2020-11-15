@@ -144,12 +144,14 @@ html, body {
 	border: 2px solid #144E47; 
 	padding: 20px;		
 }
-
+    img{
+        object-fit: contain;
+    }
     /*Diseño de los span img*/
     .imgl{
     left: 1%;
     width: 25%;
-    height: 74%;
+    height: 54%;
 }
     
     /*Diseño de los span titulo*/
@@ -164,7 +166,7 @@ html, body {
     left: 27%;
     top: 26%;
     width: 40%;
-    height: 60%;
+    height: 37%;
 }
 
     /*Diseño de los span aut*/
@@ -172,14 +174,14 @@ html, body {
     left: 68%;
     top: 26%;
     width: 31%;
-    height: 60%;
+    height: 37%;
 }
 
     /*Diseño de los span desc*/
     .desc{
     left: 1%;
     bottom: 1%;
-    top: 88%;
+    top: 67%;
     width: 98%;
     height: 26%;
 }
