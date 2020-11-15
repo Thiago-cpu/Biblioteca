@@ -11,7 +11,7 @@
     <!--Javascript-->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="mostrarimg.js"></script>
+    <script src="./mostrarimg.js"></script>
 
 
 </head>
@@ -21,14 +21,19 @@
         $(function(){
          $("#alert").load("/Biblioteca/src/alert.html", function(){
             $('.msg').html('¡El libro se subió correctamente!')
+            if(window.location.href.substring(window.location.href.lastIndexOf("/")) == "/index.php?=success"){
+                mostraralert()
+
+            }
          });
 
          
         });  
      </script>
-    <div class="alert hide" id="alert">
+    <div class="alert hide" style="width: 430px; position:absolute;" id="alert">
         
     </div>
+    
     <?php
         include("../src/Header/header.php");
     if (isset($_SESSION['id'])){
@@ -39,8 +44,10 @@
 <span class='imgl'>
     <h2> Foto portada: </h2>
     <br>
-    
-    <input type='file' onchange='mostrarimg(event, name)' name='libroimg' required>
+    <div style='position: relative;'>
+    <button type='button' style ='width: 100%;position: absolute;top: 0px;left: 0px;z-index: 1;'>Seleccionar archivo</button>
+    <input type='file' style='cursor: pointer;width: 100%;position: relative;text-align: right;-moz-opacity:0 ;filter:alpha(opacity: 0);opacity: 0;z-index: 2;' onchange='mostrarimg(event, name)' name='libroimg'  required>
+    </div>
     <div class='img_align'>
     <img id='libroimg' width='200' height='300' />
     </div>
@@ -73,8 +80,10 @@
     <input  type='text' name='autores' required>
     <br>
     <br>
-
-    <input type='file' onchange='mostrarimg(event, name)' name='autorimg'  required>
+    <div style='position: relative;'>
+    <button type='button' style ='width: 100%;position: absolute;top: 0px;left: 0px;z-index: 1;'>Seleccionar archivo</button>
+    <input type='file' style='cursor: pointer;width: 100%;position: relative;text-align: right;-moz-opacity:0 ;filter:alpha(opacity: 0);opacity: 0;z-index: 2;' onchange='mostrarimg(event, name)' name='autorimg'  required>
+    </div>
     <div class='img_align_autor'>
     <img id='autorimg' width='200' height='200' />
     </div>
@@ -92,15 +101,11 @@
     
 ?>
 
-<script>
 
-    if(window.location.href.substring(window.location.href.lastIndexOf("/")) == "/index.php?=success"){
-        mostraralert()
-
-    }
-
-</script>
 <style>
+    body{
+        overflow-x: hidden;
+    }
         .navbar{
             position:absolute;
             top:0;

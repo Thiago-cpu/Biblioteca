@@ -7,7 +7,7 @@
    
     <!--Estilos-->
     <link rel="stylesheet" type="text/css" href="../Usuarios/Style.css"/>
-    <link rel="stylesheet" type="text/css" href="../src/alert.css">
+
 
 </head>
 <body>

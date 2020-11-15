@@ -144,7 +144,10 @@ html, body {
 	border: 2px solid #144E47; 
 	padding: 20px;		
 }
-    img{
+    div > img{
+        object-fit: cover;
+    }
+    span > img{
         object-fit: contain;
     }
     /*Diseño de los span img*/
