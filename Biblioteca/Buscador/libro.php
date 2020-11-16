@@ -25,6 +25,8 @@ echo "
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css' integrity='sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2' crossorigin='anonymous'>
     <link rel='stylesheet' type='text/css' href='style.css'/>
     <link rel='stylesheet' href='../src/Comentarios/comentario.css'>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src='https://code.jquery.com/jquery-3.4.1.js'></script>
 	<meta charset='UTF-8'>
 </head>
 <body>
@@ -106,28 +108,135 @@ if(isset($_SESSION["apodo"])){
 ";
     }
 }
-$cargarcomentarios = "SELECT usuarios.nickname ,usuarios.user_img ,comentarios.comentario from comentarios INNER JOIN usuarios where comentarios.id_lib = $id and usuarios.id_user = comentarios.id_user";
+$cargarcomentarios = "SELECT usuarios.nickname ,usuarios.user_img ,comentarios.comentario, comentarios.idcom from comentarios INNER JOIN usuarios where comentarios.id_lib = $id and usuarios.id_user = comentarios.id_user";
 if ($ejecutarconsulta = mysqli_query($mysqli, $cargarcomentarios)){
 
     while ($comentarios = mysqli_fetch_row($ejecutarconsulta)) {
         
         echo "
-        <div style='position:relative; top:82%' class='input-group'>
+        <div style='position:relative; top:82%' class='input-group comments' id= 'com-$comentarios[3]'>
         <div class='input-group-prepend'>
             <span class='input-group-text'>
             <img src='../Administracion/$comentarios[1]' width='50px' height='50px'>
             </span>
+            
         </div> 
+        
         <textarea name='com' class='form-control'autocapitalize='sentences'  rows ='3' cols='167'aria-label='With textarea' disabled='True'>
 $comentarios[0]:
 $comentarios[2]
-        </textarea>
-
-
-        </div>
-        ";
+        </textarea>";
+        if (isset($_SESSION["apodo"])) {
+            echo "
+            <i class='far fa-thumbs-up like punt'  id='like-$comentarios[3]'><p></p></i>
+            <i class='far fa-thumbs-down dislike punt'    id='disl-$comentarios[3]'><p></p></i>
+            ";
+        }
+        echo"</div>";
+        
     
     }
 }
 //cargar comentarios
 ?>
+<script>
+    const mostrarlikes = function(){
+    let comentarios = document.querySelectorAll('.comments');
+
+    let arrcom = {};
+    let cont = 0
+    comentarios.forEach(e => {
+        arrcom['com' +cont] = e.id
+        cont +=1
+    }); 
+    $.ajax({
+            data: arrcom,
+            url:`cantidadlikes.php`,
+            type:"POST",
+            dataType:"json",
+            success:function(data){
+                data.forEach(e => {
+                    document.querySelector(`#like-${e[0]} > p`).textContent = e[1]
+                    document.querySelector(`#disl-${e[0]} > p`).textContent = e[2]
+                });
+            }
+            })
+    }
+    mostrarlikes()
+</script>
+<script>
+    <?php echo "const lib = $id; const user = $_SESSION[id];"?>
+    let link = `getlike.php?libro=${lib}&user=${user}`;
+    $.ajax({
+        url:link,
+        type:"POST",
+        dataType:"json",
+        success:function(data){
+            data = JSON.parse(data)
+            let com;
+            data.forEach(e => {
+                if (e[3] == 1){
+                    com = document.getElementById('like-'+e[1])
+                    com.classList.remove("far")
+                    com.classList.add("fas")
+                } else {
+                    com = document.getElementById('disl-'+e[1])
+                    com.classList.remove("far")
+                    com.classList.add("fas")
+                }
+                
+            });
+        }
+    })
+</script>
+<script>
+        <?php echo "const iduser = $_SESSION[id]; const libro = $id;" ?>
+        let todos = document.querySelectorAll('.punt')
+        todos.forEach(e => {
+            e.onclick = () =>{
+                let url;
+                if(e.id.includes('like')){
+                    if(e.classList.contains("far")){
+                        url = `like.php?id=${e.id}&cont=sumar&iduser=${iduser}&libro=${libro}`
+                        e.classList.remove("far")
+                        e.classList.add("fas")
+                        if (e.nextElementSibling.classList.contains("fas")){
+                            e.nextElementSibling.classList.remove("fas")
+                            e.nextElementSibling.classList.add("far")
+                        }
+                    } else {
+                        url = `like.php?id=${e.id}&cont=restar&iduser=${iduser}&libro=${libro}`
+                        e.classList.remove("fas")
+                        e.classList.add("far")
+                    }
+
+                } else{
+                    if(e.classList.contains("far")){
+                        url = `like.php?id=${e.id}&cont=sumar&iduser=${iduser}&libro=${libro}`
+                        e.classList.remove("far")
+                        e.classList.add("fas")
+                        if (e.previousElementSibling.classList.contains("fas")){
+                            e.previousElementSibling.classList.remove("fas")
+                            e.previousElementSibling.classList.add("far")
+                        }
+                    } else {
+                        url = `like.php?id=${e.id}&cont=restar&iduser=${iduser}&libro=${libro}`
+                        e.classList.remove("fas")
+                        e.classList.add("far")
+                    }
+                }
+                
+                $.ajax({
+                    url:url,
+                    type:"POST",
+                    dataType:"json",
+                    success:function(data){
+                        mostrarlikes()
+                    }
+                })
+                
+            }
+        });
+        
+
+</script>

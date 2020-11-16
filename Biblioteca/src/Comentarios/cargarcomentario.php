@@ -10,6 +10,7 @@
     {header("location: ../../Buscador/libro.php?id=$id");} elseif 
     ($mysqli->query($consulta) === TRUE) {
         echo"se subio correctamente";
+       
         header("location: ../../Buscador/libro.php?id=$id");
     }
     $mysqli->close();

@@ -118,7 +118,18 @@ html, body {
 	border: 5px solid #144E47; 
 	border-radius: 10px;
 }	
-
+    .dislike{
+    cursor:pointer;
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    }
+    .like{
+    cursor:pointer;
+    position: absolute;
+    right: 6%;
+    top: 10%
+    }
     /*Formato del cuadro de texto*/
 	.text-desc{
 	border: 1px solid #144E47;
