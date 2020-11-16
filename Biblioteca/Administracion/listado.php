@@ -28,12 +28,7 @@
             height:50px;
             width:50px;
             object-fit:cover;
-        }
-        .navbar{
-            width: 179%;
-        }
-    
-        
+        }  
     </style>
 </head>
 <body>
