@@ -165,10 +165,10 @@ $comentarios[2]
     mostrarlikes()
 </script>
 <script>
-    <?php echo "const lib = $id; const user = $_SESSION[id];"?>
-    let link = `getlike.php?libro=${lib}&user=${user}`;
+    <?php echo "datos = {'libro': $id,'user': $_SESSION[id]};";?>
     $.ajax({
-        url:link,
+        data: datos,
+        url:"getlike.php",
         type:"POST",
         dataType:"json",
         success:function(data){
@@ -192,12 +192,17 @@ $comentarios[2]
 <script>
         <?php echo "const iduser = $_SESSION[id]; const libro = $id;" ?>
         let todos = document.querySelectorAll('.punt')
+        let accion;
+        let datos = {
+            "iduser": iduser,
+            "libro": libro
+        }
         todos.forEach(e => {
             e.onclick = () =>{
-                let url;
+                datos['id'] = e.id
                 if(e.id.includes('like')){
                     if(e.classList.contains("far")){
-                        url = `like.php?id=${e.id}&cont=sumar&iduser=${iduser}&libro=${libro}`
+                        datos['cont'] = 'sumar';
                         e.classList.remove("far")
                         e.classList.add("fas")
                         if (e.nextElementSibling.classList.contains("fas")){
@@ -205,14 +210,14 @@ $comentarios[2]
                             e.nextElementSibling.classList.add("far")
                         }
                     } else {
-                        url = `like.php?id=${e.id}&cont=restar&iduser=${iduser}&libro=${libro}`
+                        datos['cont'] = 'restar';
                         e.classList.remove("fas")
                         e.classList.add("far")
                     }
 
                 } else{
                     if(e.classList.contains("far")){
-                        url = `like.php?id=${e.id}&cont=sumar&iduser=${iduser}&libro=${libro}`
+                        datos['cont'] = 'sumar';
                         e.classList.remove("far")
                         e.classList.add("fas")
                         if (e.previousElementSibling.classList.contains("fas")){
@@ -220,14 +225,14 @@ $comentarios[2]
                             e.previousElementSibling.classList.add("far")
                         }
                     } else {
-                        url = `like.php?id=${e.id}&cont=restar&iduser=${iduser}&libro=${libro}`
+                        datos['cont'] = 'restar';
                         e.classList.remove("fas")
                         e.classList.add("far")
                     }
                 }
-                
                 $.ajax({
-                    url:url,
+                    data: datos,
+                    url:"like.php",
                     type:"POST",
                     dataType:"json",
                     success:function(data){

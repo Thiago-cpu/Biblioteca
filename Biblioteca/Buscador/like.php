@@ -1,13 +1,10 @@
 <?php
     require_once("../src/conect.php");
-    $url =  $_SERVER["REQUEST_URI"];
-    $url_components = parse_url($url); 
-    parse_str($url_components['query'], $params); 
-    $id = $params['id'];
+    $id = $_POST['id'];
     $idcom = substr($id, 5);
-    $user = $params['iduser'];
-    $cont = $params['cont'];
-    $libro = $params['libro'];
+    $user = $_POST['iduser'];
+    $cont = $_POST['cont'];
+    $libro = $_POST['libro'];
     $data = ['id' => $id, 'name' => $cont, 'data' => $id[0]];
     if ($cont == 'sumar'){
         $sql = "SELECT case 
